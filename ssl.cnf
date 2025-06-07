@@ -1,0 +1,28 @@
+default_bits           = 2048
+distinguished_name     = req_distinguished_name
+prompt                 = no
+output_password        = _PASSWORD
+
+[ req_distinguished_name ]
+countryName            = US
+stateOrProvinceName    = WI
+localityName           = monkeyland
+organizationName       = monkeysinc
+organizationalUnitName = monkeyops
+commonName             = _NAME
+emailAddress           = no@email.net
+
+[ exts ]
+basicConstraints       = critical, CA:FALSE
+keyUsage               = critical, digitalSignature, keyEncipherment, keyAgreement
+extendedKeyUsage       = critical, serverAuth, clientAuth
+
+[ serverext ]
+basicConstraints       = critical, CA:FALSE
+keyUsage               = critical, digitalSignature, keyEncipherment, keyAgreement
+extendedKeyUsage       = critical, serverAuth
+
+[ clientext ]
+basicConstraints       = critical, CA:FALSE
+keyUsage               = critical, digitalSignature, keyEncipherment
+extendedKeyUsage       = critical, clientAuth
