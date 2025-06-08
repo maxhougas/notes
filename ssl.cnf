@@ -1,7 +1,6 @@
 default_bits           = 2048
 distinguished_name     = req_distinguished_name
 prompt                 = no
-output_password        = _PASSWORD
 
 [ req_distinguished_name ]
 countryName            = US
@@ -12,17 +11,21 @@ organizationalUnitName = monkeyops
 commonName             = _NAME
 emailAddress           = no@email.net
 
-[ exts ]
+[ ext ]
 basicConstraints       = critical, CA:FALSE
 keyUsage               = critical, digitalSignature, keyEncipherment, keyAgreement
 extendedKeyUsage       = critical, serverAuth, clientAuth
 
-[ serverext ]
+[ caext ]
+basicConstraints       = critical, CA:TRUE
+keyUsage               = critical, keyCertSign, cRLSign
+
+[ srvext ]
 basicConstraints       = critical, CA:FALSE
 keyUsage               = critical, digitalSignature, keyEncipherment, keyAgreement
 extendedKeyUsage       = critical, serverAuth
 
-[ clientext ]
+[ cliext ]
 basicConstraints       = critical, CA:FALSE
 keyUsage               = critical, digitalSignature, keyEncipherment
 extendedKeyUsage       = critical, clientAuth
