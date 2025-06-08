@@ -3,11 +3,15 @@
 # Notes
 Big repo o' notes
 
+- [Table of Contents](#top)
+  - [Docker](#docker)
+  - [OpenSSL](#openssl)
 
+[top](#top)
 
-## Docker Notes
+## Docker
 ### Install Docker
-- apt install docker.io
+ - apt install docker.io
 ### Install Docker Engine
  - https://docs.docker.com/engine/install/debian/ is pretty good
  - You may need to change https://unix.stackexchange.com/questions/630643/how-to-install-docker-ce-in-kali-linux
@@ -36,3 +40,48 @@ Big repo o' notes
  - https://www.geeksforgeeks.org/docker-docker-container-for-node-js/
  - https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
  - https://jpetazzo.github.io/2020/02/01/quest-minimal-docker-images-part-1/
+
+[top](#top)
+
+## OpenSSL
+### Make private key
+`openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out itsa.key`
+`openssl genrsa -out itsa.key 2048`
+
+### Extract private key from public key
+`openssl pkey -in itsa.key -pubout -out itsa.pub`
+`openssl rsa -in itsa.key -pubout -out itsa.pub`
+
+### Generate signing request from private key
+`openssl req -new -key itsa.key -out itsa.csr`
+
+generate private key and signing request
+openssl req -newkey rsa:2048 -keyout itsa.key -out itsa.csr
+
+generate self signed certificate from public key
+openssl req -x509 -key itsa.key -out itsa.crt
+
+generate private key and self signed certificate
+openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt
+
+sign a certificate request
+openssl x509 -req -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key
+
+sign a certificate request with extensions
+openssl x509 -req -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key -extfile ssl.cnf -extensions exts
+
+generate a private key and a signed certificate
+openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key
+
+generate a private key and a signed certificate with extensions
+openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf -extensions exts
+
+dump certificat info
+openssl x509 -text -noout -in itsa.crt
+
+put it together
+generate a ca key and a self-signed certificate
+openssl req -x509 -newkey rsa:2048 -keyout ca.key -out ca.crt -config ssl.cnf
+gnerate a key and a certificate signed by the CA
+openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf
+

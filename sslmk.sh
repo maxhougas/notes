@@ -7,14 +7,14 @@ mkca=''
 mkkey=''
 ext='ext'
 
-while getopts "c:k:m:n:t:h" arg; do
+while getopts "c:k:m:n:x:h" arg; do
  case "$arg" in
 
   c) cafile="$OPTARG";;
   k) keyfile="$OPTARG";;
-  m) if [ "$OPTARG" = 'ca' ]; then mkca='y'; fi; if [ "$OPTARG" = 'key' ]; then mkkey='y'; fi;;
+  m) if [ "$OPTARG" = 'ca' ]; then mkca='y'; elif [ "$OPTARG" = 'key' ]; then mkkey='y'; fi;;
   n) name="$OPTARG";;
-  t) ext="$OPTARG";;
+  x) ext="$OPTARG";;
   h)
    echo '-c ca filename without extension'
    echo '-k key filename without extension'
