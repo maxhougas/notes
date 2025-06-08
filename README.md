@@ -29,7 +29,7 @@ Big repo o' notes
  
 ### Commands
  - docker build -t [tag] .
- - docker exec -it [mycontainer] [shell] https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
+ - `docker exec -it [mycontainer] [shell]` https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
  - docker run -dp [external]:[internal] [tag]
  - docker rename [old name] [new name] https://www.tecmint.com/name-docker-containers/
  - docker run -d --name [name] [image]
