@@ -28,11 +28,12 @@ Big repo o' notes
 ```
  
 ### Commands
- - docker build -t [tag] .
+ - `docker build -t [tag] .`
  - `docker exec -it [mycontainer] [shell]` https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
- - docker run -dp [external]:[internal] [tag]
- - docker rename [old name] [new name] https://www.tecmint.com/name-docker-containers/
- - docker run -d --name [name] [image]
+ - `docker run -dp [external]:[internal] [image]`
+ - `docker rename [old name] [new name]` https://www.tecmint.com/name-docker-containers/
+ - `docker run -d --name [name] [image]`
+ - `docker create -dp [external]:[internal] --network [network] --ip=[ipaddr] --name [name] [image]`
 
 ### Resources
  - https://docs.docker.com/get-started/
@@ -102,7 +103,7 @@ Big repo o' notes
 ```
 
 ### Put it together
- - Generate a ca key and a self-signed certificate
+ - Generate a CA key and a self-signed certificate
 ```
   openssl req -x509 -newkey rsa:2048 -keyout ca.key -out ca.crt -config ssl.cnf
 ```
