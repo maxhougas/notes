@@ -99,5 +99,8 @@ openssl req\
  - Generate a key and a certificate signed by the CA
    - `openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf`
 
+### Resources
+ - https://docs.openssl.org/master/man1/
+
 [top](#top)
 
