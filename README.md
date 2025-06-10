@@ -81,14 +81,14 @@ Big repo o' notes
 
 ### Generate a private key and a signed certificate with extensions
  - `openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf -extensions exts`
- - `
+```
 openssl req\
  -addext 'basicConstraints:critical,CA:FALSE'\
  -addext 'keyUsage:keyEncipherment'\
  -addext 'extendedKeyUsage:serverAuth'\
  -subj '/C=US/ST=WI/L=town/O=coolOrg/OU=pwnz0rClub/CN=pwnz0rSrv'
  -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key
-`
+```
 
 ### Dump certificate info
  - `openssl x509 -text -noout -in itsa.crt`
