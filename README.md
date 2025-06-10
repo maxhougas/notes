@@ -86,7 +86,7 @@ openssl req\
  -addext 'basicConstraints:critical,CA:FALSE'\
  -addext 'keyUsage:keyEncipherment'\
  -addext 'extendedKeyUsage:serverAuth'\
- -subj '/C=US/ST=WI/L=town/O=coolOrg/OU=pwnz0rClub/CN=pwnz0rSrv'
+ -subj '/C=US/ST=WI/L=town/O=coolOrg/OU=pwnz0rClub/CN=pwnz0rSrv'\
  -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key
 ```
 
