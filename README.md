@@ -28,7 +28,7 @@ Big repo o' notes
 ```
 
 ### Change Storage Location
- - `echo -e '{\n"data-root": "/new/storage/location"'}'` 
+ - `echo -e '{\n"data-root": "/new/storage/location"'}' > /etc/docker/daemon.json` 
 
 ### Commands
  - `docker build -t [tag] .`
