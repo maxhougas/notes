@@ -54,11 +54,10 @@ Big repo o' notes
  - `apt install openssl`
 
 ### Make private key
-
  - `openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:2048 -out itsa.key`
  - `openssl genrsa -out itsa.key 2048`
 
-### Extract private key from public key
+### Extract public key from private key
  - `openssl pkey -in itsa.key -pubout -out itsa.pub`
  - `openssl rsa -in itsa.key -pubout -out itsa.pub`
 
@@ -68,7 +67,7 @@ Big repo o' notes
 ### Generate private key and signing request
  - `openssl req -newkey rsa:2048 -keyout itsa.key -out itsa.csr`
 
-### Generate self signed certificate from public key
+### Generate self signed certificate from private key
  - `openssl req -x509 -key itsa.key -out itsa.crt`
 
 ### Generate private key and self signed certificate
@@ -76,9 +75,11 @@ Big repo o' notes
 
 ### Sign a certificate request
  - `openssl x509 -req -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key`
+ - `openssl req -x509 -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key`
 
 ### Sign a certificate request with extensions
  - `openssl x509 -req -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key -extfile ssl.cnf -extensions exts`
+ - `openssl req -addext 'basicConstraints=critical,CA:FALSE' -x509 -in itsa.csr -out itsa.crt -CA ca.crt -CAkey ca.key`
 
 ### Generate a private key and a signed certificate
  - `openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key`
