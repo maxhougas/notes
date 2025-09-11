@@ -108,7 +108,7 @@ openssl req\
 ### Resources
 - https://docs.openssl.org/master/man1/
 
-[top](#top)
+###### [Go to Top](#top)
 
 ## GPM
 - Use the maus in your terminal!
