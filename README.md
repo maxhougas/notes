@@ -3,9 +3,10 @@
 # Notes
 Big repo o' notes
 
-- [Table of Contents](#top)
-  - [Docker](#docker)
-  - [OpenSSL](#openssl)
+## Table of Contents
+- [Docker](#docker)
+- [OpenSSL](#openssl)
+- [GPM](#gpm)
 
 [top](#top)
 
@@ -109,3 +110,13 @@ openssl req\
 
 [top](#top)
 
+## GPM
+- Use the maus in your terminal!
+  - Has problems in VirtualBox
+  1. `systemctl disable gpm` if necessary
+  2. `service gpm stop` if necessary
+  3. Disable maus integration
+  4. Capture maus
+  5. `service gpm start`
+  6. Maus may now be captured and uncaptured as desired
+- Attempting to capture maus (for the first time since virtual system start) while GPM is running does weird things
