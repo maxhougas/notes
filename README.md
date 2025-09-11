@@ -8,7 +8,7 @@ Big repo o' notes
 - [OpenSSL](#openssl)
 - [GPM](#gpm)
 
-[top](#top)
+###### [Go to Top](#top)
 
 ## Docker
 ### Install Docker
@@ -47,7 +47,7 @@ echo \
 - https://jpetazzo.github.io/2020/02/01/quest-minimal-docker-images-part-1/
 - https://evodify.com/change-docker-storage-location/
 
-[top](#top)
+###### [Go to Top](#top)
 
 ## OpenSSL
 
