@@ -4,15 +4,61 @@
 Big repo o' notes
 
 ## Table of Contents
+- [Arch](#arch)
 - [Docker](#docker)
-- [OpenSSL](#openssl)
 - [GPM](#gpm)
+- [OpenSSL](#openssl)
+
+###### [Go to Top](#top)
+
+## Arch
+
+### systemd-networkd
+- Get the name of your device(s) with `ip link` or `ip a`. Call it DEVICE.
+- Put the following in /etc/systemd/network/
+```
+[Match]
+Name=DEVICE
+
+[Network]
+DCHP=yes
+``` 
+- Static IP set-ups will need something more like
+```
+[Match]
+Name=DEVICE]
+
+[Network]
+Address=VALID.STATIC.IP.ADDRESS
+Gateway=ASK.YOUR.NETWORK.ADMIN
+DNS=9.9.9.9
+```
+- There's also some other DNS config file somewhere
+- You may need to
+```
+systemctl enable systemd-networkd
+systemctl start systemd-networkd
+ip link set DEVICE up
+```
+- Wireless units can be controlled through `iwctl` which will probably require
+```
+systemctl enable iwd
+systemctl start iwd
+```
+- Good luck if you're on Parabola
+
+#### Resources
+- [Debian Wiki: SystemdNetworkd](https://wiki.debian.org/SystemdNetworkd)
+- [Arch Man Pages: ip-link(8)](https://man.archlinux.org/man/ip-link.8)
+- [Arch Wiki: iwd](https://wiki.archlinux.org/title/Iwd)
 
 ###### [Go to Top](#top)
 
 ## Docker
+
 ### Install Docker
 - `apt install docker.io`
+
 ### Install Docker Engine
 - https://docs.docker.com/engine/install/debian/ is pretty good
 - You may need to change https://unix.stackexchange.com/questions/630643/how-to-install-docker-ce-in-kali-linux
@@ -46,6 +92,20 @@ echo \
 - https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
 - https://jpetazzo.github.io/2020/02/01/quest-minimal-docker-images-part-1/
 - https://evodify.com/change-docker-storage-location/
+
+###### [Go to Top](#top)
+
+## GPM
+- Use the maus in your terminal!
+  - Has problems in VirtualBox
+  1. `systemctl disable gpm` if necessary
+  2. `service gpm stop` if necessary
+  3. Disable maus integration
+  4. Capture maus
+  5. `service gpm start`
+  6. Maus may now be captured and uncaptured as desired
+  7. If you ran steps 1 or 2, shut down and reboot virtual machine
+- Attempting to capture maus (for the first time since virtual system start) while GPM is running does weird things
 
 ###### [Go to Top](#top)
 
@@ -110,15 +170,4 @@ openssl req\
 
 ###### [Go to Top](#top)
 
-## GPM
-- Use the maus in your terminal!
-  - Has problems in VirtualBox
-  1. `systemctl disable gpm` if necessary
-  2. `service gpm stop` if necessary
-  3. Disable maus integration
-  4. Capture maus
-  5. `service gpm start`
-  6. Maus may now be captured and uncaptured as desired
-- Attempting to capture maus (for the first time since virtual system start) while GPM is running does weird things
 
-###### [Go to Top](#top)
