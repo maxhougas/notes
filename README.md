@@ -26,7 +26,7 @@ DCHP=yes
 - Static IP set-ups will need something more like
 ```
 [Match]
-Name=DEVICE]
+Name=DEVICE
 
 [Network]
 Address=VALID.STATIC.IP.ADDRESS
