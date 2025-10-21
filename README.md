@@ -6,6 +6,7 @@ Big repo o' notes
 ## Table of Contents
 - [Arch](#arch)
 - [Docker](#docker)
+- [Drivers](#drivers)
 - [GPM](#gpm)
 - [OpenSSL](#openssl)
 
@@ -92,6 +93,20 @@ echo \
 - https://stackoverflow.com/questions/30172605/how-do-i-get-into-a-docker-containers-shell
 - https://jpetazzo.github.io/2020/02/01/quest-minimal-docker-images-part-1/
 - https://evodify.com/change-docker-storage-location/
+
+###### [Go to Top](#top)
+
+## Drivers
+- Firmware blobs can be found at [git.kernel.org](https://git.kernel.org/pub/scm/linux/kernel/git/ath/linux-firmware.git/tree)
+- Some drivers are at [git.kernel.org](https://git.kernel.org)
+- Drop the firmware in `/lib/firmware`
+- Driver Makefile is usually fine
+- There is usually some kind of make config or make menuconfig
+```
+make uninstall
+make menuconfig
+make install
+```
 
 ###### [Go to Top](#top)
 
