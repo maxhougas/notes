@@ -34,11 +34,24 @@ Address=VALID.STATIC.IP.ADDRESS
 Gateway=ASK.YOUR.NETWORK.ADMIN
 DNS=9.9.9.9
 ```
-- There's also some other DNS config file somewhere
+- There's also another DNS config file @ /etc/resolv.conf
+```
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+nameserver 9.9.9.9
+nameserver 149.112.112.112
+nameserver 2620:fe::9
+nameserver 2001:4860:4860::8888
+nameserver 2001:4860:4860::8844
+nameserver 2620:fe::fe
+nameserver 2620:fe::9
+```
 - You may need to
 ```
 systemctl enable systemd-networkd
 systemctl start systemd-networkd
+systemctl enable systemd-resolved
+systemctl start systemd-resolved
 ip link set DEVICE up
 ```
 - Wireless units can be controlled through `iwctl` which will probably require
