@@ -1,6 +1,7 @@
 # Games!
 
 ## Freebies
+- [Battle for Westnoth](https://www.wesnoth.org/)
 - [Beyond All Reason](https://www.beyondallreason.info/)
 - [FreeDoom](https://freedoom.github.io/)
 - [Frotz](https://davidgriffith.gitlab.io/frotz/)
