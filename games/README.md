@@ -5,6 +5,7 @@
 - [Beyond All Reason](https://www.beyondallreason.info/)
 - [FreeDoom](https://freedoom.github.io/)
 - [Frotz](https://davidgriffith.gitlab.io/frotz/)
+- [Marshmallow Duel](https://mduel2k5.spadgos.com/mduel96/download.php)
 - [MechWarrior Online](https://mwomercs.com/)
 - [Nethack](https://www.nethack.org/)
 - [Zandronum](https://zandronum.com/)
