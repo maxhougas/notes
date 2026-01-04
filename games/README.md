@@ -1,14 +1,29 @@
 # Games!
 
 ## Freebies
+- [Abuse](https://www.mobygames.com/game/389/abuse/)
+  - 2d Run 'n' Gun
 - [Battle for Westnoth](https://www.wesnoth.org/)
+  - Turn based strategy with heavy RPG elements
 - [Beyond All Reason](https://www.beyondallreason.info/)
+  - GPL Total Annihilation spiritual successor
 - [FreeDoom](https://freedoom.github.io/)
+  - Free IWAD for use with Zandronum
 - [Frotz](https://davidgriffith.gitlab.io/frotz/)
+  - Z-machine interpreter
 - [Marshmallow Duel](https://mduel2k5.spadgos.com/mduel96/download.php)
+  - VS. platformer
 - [MechWarrior Online](https://mwomercs.com/)
+  - A safe space to say racial slurs
+- [MegaMek](https://megamek.org/)
+  - GPL BattleTech clone
 - [Nethack](https://www.nethack.org/)
+  - Oldskool roguelike
 - [Zandronum](https://zandronum.com/)
-- [Zeroi-K](https://zero-k.info/)
+  - Doom & Doom2 sourceport
+- [Zero-K](https://zero-k.info/)
+  - GPL Total Annihilation spiritual successor
 - [Warzone 2100](https://wz2100.net/)
+  - RTS
 - [Where Winds Meet](https://www.wherewindsmeetgame.com/)
+  - It's something
