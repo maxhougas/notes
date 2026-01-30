@@ -23,11 +23,14 @@
   - GPL BattleTech clone
 - [Nethack](https://www.nethack.org/)
   - Oldskool roguelike
-- [Zandronum](https://zandronum.com/)
-  - Doom & Doom2 sourceport
-- [Zero-K](https://zero-k.info/)
-  - GPL Total Annihilation spiritual successor
+- [Powder](http://www.zincland.com/powder/index.php?pagename=release)
+  - Roguelike for many platforms
 - [Warzone 2100](https://wz2100.net/)
   - RTS
 - [Where Winds Meet](https://www.wherewindsmeetgame.com/)
   - It's something
+- [Zandronum](https://zandronum.com/)
+  - Doom & Doom2 sourceport
+- [Zero-K](https://zero-k.info/)
+  - GPL Total Annihilation spiritual successor
+
