@@ -187,11 +187,23 @@ openssl req\
 ### Dump certificate info
 - `openssl x509 -text -noout -in itsa.crt`
 
-### Put it together
+### Generate CA key, CA cert, private key, and certificate
 - Generate a CA key and a self-signed certificate
   - `openssl req -x509 -newkey rsa:2048 -keyout ca.key -out ca.crt -config ssl.cnf`
 - Generate a key and a certificate signed by the CA
   - `openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf`
+
+### Generate symmetric key
+- `openssl rand -base64 64`
+
+### Public key encrypt
+- `openssl pkeyutl -encrypt -pubin -inkey pub.key -in toencrypt.txt | base64`
+
+### Private key decrypt
+- `cat todecrypt.txt | base64 -d | openssl pkeyutl -decrypt -inkey pri.key -in -`
+
+### Symmetric key encrypt
+- `openssl enc -aes-128-ecb -in toencrypt.txt -K $(cat sym.key) -a`
 
 ### Resources
 - https://docs.openssl.org/master/man1/
