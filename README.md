@@ -200,7 +200,7 @@ openssl req\
 - `openssl pkeyutl -encrypt -pubin -inkey pub.key -in toencrypt.txt | base64`
 
 ### Private key decrypt
-- `cat todecrypt.txt | base64 -d | openssl pkeyutl -decrypt -inkey pri.key -in -`
+- `base64 -d todecrypt.txt | openssl pkeyutl -decrypt -inkey pri.key -in -`
 
 ### Symmetric key encrypt
 - `openssl enc -aes-128-ecb -in toencrypt.txt -K $(cat sym.key) -a`
