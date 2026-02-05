@@ -194,7 +194,7 @@ openssl req\
   - `openssl req -x509 -newkey rsa:2048 -keyout itsa.key -out itsa.crt -CA ca.crt -CAkey ca.key -config ssl.cnf`
 
 ### Generate symmetric key
-- `openssl rand 16 -out sym.key`
+- `openssl rand 16 | hexdump -ve \"%x02\" sym.key`
 
 ### Public key encrypt
 - `openssl pkeyutl -encrypt -pubin -inkey pub.key -in toencrypt.txt | base64`
