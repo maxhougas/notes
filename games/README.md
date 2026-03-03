@@ -15,6 +15,8 @@
   - Free IWAD for use with Zandronum
 - [Frotz](https://davidgriffith.gitlab.io/frotz/)
   - Z-machine interpreter
+- [Marathon](https://alephone.lhowon.org/)
+  - Pre-HALO
 - [Marshmallow Duel](https://mduel2k5.spadgos.com/mduel96/download.php)
   - VS. platformer
 - [MechWarrior Online](https://mwomercs.com/)
